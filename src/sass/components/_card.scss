@@ -1,0 +1,77 @@
+@use "../abstracts" as abs;
+@use "../base/" as b;
+
+.card {
+  &--creation {
+  }
+  &__figure {
+    position: relative;
+    margin: 0 auto;
+
+    overflow: hidden;
+  }
+
+  &__figure:hover {
+    @include abs.breakpoint(tablets) {
+      .card__picture {
+        opacity: 0.2;
+      }
+      .card__caption {
+        color: abs.$black;
+      }
+
+      background: none;
+    }
+    @include abs.breakpoint(desktops) {
+      .card__img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__figure::before {
+    content: "";
+    position: absolute;
+
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
+    inset: 0;
+    z-index: 2;
+
+    @include abs.breakpoint(tablets) {
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    }
+  }
+  &__picture {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &__img {
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+    @include abs.breakpoint(tablets) {
+      width: 100%;
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    color: abs.$white;
+    text-transform: uppercase;
+
+    bottom: 15%;
+    left: 7%;
+    font-size: b.$font-size-24;
+    font-family: b.$font-heading;
+
+    line-height: 1;
+    font-weight: 300;
+
+    z-index: 3;
+    transition: color 0.3s ease-in-out;
+    @include abs.breakpoint(tablets) {
+      bottom: 7%;
+      left: 15%;
+      font-size: b.$font-size-30;
+    }
+  }
+}

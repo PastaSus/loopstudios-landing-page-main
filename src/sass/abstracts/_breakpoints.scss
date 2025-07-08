@@ -1,0 +1,13 @@
+@use "functions" as f;
+@use "sass:map";
+
+$breakpoints-up: (
+  "tablets": f.em(768),
+  "desktops": f.em(1440),
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map.get($breakpoints-up, $size)) {
+    @content;
+  }
+}

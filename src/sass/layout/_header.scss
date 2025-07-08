@@ -1,0 +1,38 @@
+@use "../abstracts" as abs;
+@use "../base/" as b;
+
+.header {
+  // max-width: 335px;
+
+  &__inner {
+    padding-block-start: abs.$spacing-36;
+    max-width: clamp(330px, 80%, 1200px);
+    justify-content: space-between;
+
+    @include abs.breakpoint(tablets) {
+      max-width: 630px;
+    }
+
+    @include abs.breakpoint(desktops) {
+      padding-block-start: abs.$spacing-64;
+      max-width: 1180px;
+    }
+  }
+  &__logo {
+    z-index: 2;
+  }
+  &__logo-img {
+    max-width: 150px;
+    @include abs.breakpoint(desktops) {
+      max-width: 200px;
+    }
+  }
+  &__menu-btn {
+    @extend %btn;
+    z-index: 2;
+
+    @include abs.breakpoint(desktops) {
+      display: none;
+    }
+  }
+}

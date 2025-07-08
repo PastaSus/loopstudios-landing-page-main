@@ -1,0 +1,27 @@
+@use "../abstracts" as abs;
+@use "../base/" as b;
+
+.menu-overlay {
+  position: absolute;
+  z-index: 3;
+  margin: abs.$spacing-128 0 0 abs.$spacing-16;
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    flex-direction: column;
+
+    gap: abs.$spacing-24;
+  }
+  &__item {
+  }
+  &__link {
+    text-decoration: none;
+    color: abs.$white;
+    text-transform: uppercase;
+    font-size: b.$font-size-24;
+    font-family: "Josefin sans", sans-serif;
+    font-weight: 300;
+  }
+}

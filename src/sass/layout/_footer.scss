@@ -1,0 +1,169 @@
+@use "../abstracts" as abs;
+@use "../base/" as b;
+
+.footer {
+  background-color: abs.$black;
+  justify-content: center;
+
+  margin-block-start: abs.$spacing-48;
+  padding: abs.$spacing-48 0;
+
+  @include abs.breakpoint(desktops) {
+    margin-block-start: abs.$spacing-128;
+  }
+
+  &__inner {
+    @include abs.breakpoint(desktops) {
+      display: flex;
+
+      min-width: 1180px;
+      justify-content: space-between;
+    }
+  }
+  &__logo-nav {
+    justify-items: center;
+  }
+  &__brand {
+  }
+  &__logo {
+    @include abs.breakpoint(desktops) {
+      justify-self: start;
+    }
+  }
+  &__logo-img {
+    max-width: 150px;
+    @include abs.breakpoint(tablets) {
+      max-width: 200px;
+    }
+    @include abs.breakpoint(desktops) {
+      max-width: 150px;
+    }
+  }
+
+  &__social-copyright {
+    @include abs.breakpoint(desktops) {
+      align-content: space-between;
+    }
+  }
+
+  &__copyright {
+    color: abs.$grey-200;
+
+    @include abs.breakpoint(tablets) {
+      font-size: b.$font-size-18;
+    }
+
+    @include abs.breakpoint(desktops) {
+      margin-block-start: 0;
+    }
+  }
+}
+
+.nav {
+  &--footer {
+  }
+  &__list--footer {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+
+    gap: abs.$spacing-16;
+
+    text-align: center;
+    margin-block: abs.$spacing-40;
+    @include abs.breakpoint(desktops) {
+      flex-direction: row;
+
+      margin-block-end: 0;
+
+      gap: abs.$spacing-24;
+    }
+  }
+  &__item--footer {
+  }
+  &__link--footer {
+    text-decoration: none;
+    color: abs.$white;
+    display: inline-block;
+    position: relative;
+
+    @include abs.breakpoint(tablets) {
+      font-size: b.$font-size-20;
+    }
+
+    @include abs.breakpoint(desktops) {
+      font-size: b.$font-size-18;
+
+      &::after {
+        content: "";
+        position: absolute;
+
+        left: 50%; // center starting point
+        bottom: -7px;
+        transform: translateX(-50%);
+        // shift it to be perfectly centered
+
+        height: 3px;
+        width: 0%;
+
+        background-color: currentColor;
+        // transform: scaleX(0);
+        transform-origin: left;
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 50%;
+      }
+    }
+  }
+}
+
+.social {
+  &--footer {
+    align-items: center;
+    justify-content: center;
+
+    gap: abs.$spacing-16;
+
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    @include abs.breakpoint(desktops) {
+      justify-content: end;
+    }
+  }
+  &__item {
+  }
+  &__link {
+    display: inline-block;
+    position: relative;
+
+    @include abs.breakpoint(desktops) {
+      &::after {
+        content: "";
+        position: absolute;
+
+        left: 50%; // center starting point
+        bottom: -10px;
+        transform: translateX(-50%); // shift it to be perfectly centered
+
+        height: 3px;
+        width: 0%;
+
+        background-color: abs.$white;
+
+        transform-origin: left;
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+  &__icon {
+  }
+}

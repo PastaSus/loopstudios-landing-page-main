@@ -1,0 +1,12 @@
+// @mixin gradient-overlay-before(
+//   $direction: to right,
+//   $start: rgba(0, 0, 0, 0.5),
+//   $end: transparent,
+//   $z: 1
+// ) {
+//   content: "";
+//   position: absolute;
+//   background: linear-gradient($direction, $start, $end);
+//   inset: 0;
+//   z-index: $z;
+// }

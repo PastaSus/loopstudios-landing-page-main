@@ -1,0 +1,90 @@
+@use "../abstracts" as abs;
+@use "../base/" as b;
+
+.about {
+  text-align: center;
+
+  margin-block-start: abs.$spacing-24;
+  background-color: abs.$white;
+
+  padding-block-end: abs.rem(87);
+  // padding-block-end: abs.$spacing-80;
+
+  @include abs.breakpoint(tablets) {
+    padding-block-start: abs.$spacing-80;
+  }
+
+  @include abs.breakpoint(desktops) {
+    padding-block-start: abs.$spacing-128;
+    padding-block-end: abs.$spacing-128;
+  }
+
+  &__wrapper {
+    max-width: 330px;
+
+    @include abs.breakpoint(tablets) {
+      max-width: 630px;
+    }
+
+    @include abs.breakpoint(desktops) {
+      position: relative;
+
+      max-width: 1180px;
+    }
+  }
+  &__media {
+  }
+  &__img {
+    @include abs.breakpoint(desktops) {
+      min-width: 800px;
+    }
+  }
+  &__content {
+    @include abs.breakpoint(desktops) {
+      position: absolute;
+
+      text-align: start;
+      // min-width: 480px;
+
+      right: 0;
+      bottom: 0;
+
+      background-color: abs.$white;
+
+      padding-block-start: abs.$spacing-96;
+      padding-inline-start: abs.$spacing-96;
+
+      // justify-items: end;
+    }
+  }
+  &__heading {
+    text-transform: uppercase;
+
+    font-size: b.$font-size-30;
+    font-family: b.$font-heading;
+    font-weight: 300;
+
+    margin-block-start: abs.$spacing-44;
+
+    @include abs.breakpoint(desktops) {
+      margin: 0;
+      font-size: b.$font-size-52;
+
+      max-width: 424px;
+    }
+  }
+  &__text {
+    color: abs.$grey-200;
+    max-width: 290px;
+    margin-inline: auto;
+    @include abs.breakpoint(desktops) {
+      text-wrap: wrap;
+      margin-inline: 0;
+      max-width: 460px;
+
+      line-height: 1.6;
+
+      font-size: b.$font-size-16;
+    }
+  }
+}

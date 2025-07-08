@@ -1,0 +1,64 @@
+@use "variables" as v;
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.two-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.three-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.active-border {
+  border: 2px solid var(--Orange);
+}
+
+.active {
+  opacity: 0.3;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh; /* Optional: prevents some iOS scrolling issues */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: v.$black;
+  z-index: 1;
+}
+/* Utilities above */

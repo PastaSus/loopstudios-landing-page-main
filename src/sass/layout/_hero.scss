@@ -1,0 +1,83 @@
+@use "../abstracts" as abs;
+@use "../base/" as b;
+
+.hero {
+  // height: 80vh;
+  max-width: clamp(330px, 80%, 1200px);
+  // margin-block-end: abs.$spacing-48;
+
+  position: relative;
+  @include abs.breakpoint(tablets) {
+    justify-items: center;
+  }
+
+  @include abs.breakpoint(desktops) {
+    justify-items: start;
+    max-width: 1180px;
+
+    min-height: 570px;
+  }
+
+  &__media {
+  }
+
+  &__title-container {
+    // position: relative;
+    max-width: clamp(330px, 80%, 1200px);
+    min-height: 520px;
+    align-items: center;
+
+    margin-block-end: abs.$spacing-128;
+
+    @include abs.breakpoint(tablets) {
+      align-items: end;
+
+      min-width: 630px;
+
+      min-height: 250px;
+    }
+    @include abs.breakpoint(desktops) {
+      max-width: 1180px;
+    }
+  }
+
+  &__title {
+    // max-width: 330px;
+
+    border: 1px solid abs.$white;
+    color: abs.$white;
+    text-transform: uppercase;
+
+    font-size: b.$font-size-40;
+    font-family: b.$font-heading;
+    font-weight: 300;
+
+    padding-inline: abs.$spacing-24;
+    padding-block: abs.$spacing-16;
+
+    // margin-block-start: abs.$spacing-128;
+    // top: 21%;
+    // top: clamp(8.5rem, 10vw, 10rem);
+    // left: clamp(0.5rem, 8vw, 6rem);
+
+    // position: absolute;
+
+    // justify-self: start;
+
+    @include abs.breakpoint(tablets) {
+      max-width: 630px;
+    }
+
+    @include abs.breakpoint(desktops) {
+      font-size: b.$font-size-74;
+
+      padding-inline: abs.$spacing-40;
+      padding-block: abs.$spacing-32;
+
+      max-width: 680px;
+    }
+  }
+
+  &__line {
+  }
+}

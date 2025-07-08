@@ -1,0 +1,87 @@
+@use "../abstracts" as abs;
+@use "../base/" as b;
+
+.creations {
+  max-width: 330px;
+  // margin-block-start: abs.$spacing-80;
+
+  @include abs.breakpoint(tablets) {
+    max-width: 630px;
+  }
+
+  @include abs.breakpoint(desktops) {
+    max-width: 1180px;
+  }
+
+  &__header {
+    margin-block-end: abs.$spacing-40;
+
+    @include abs.breakpoint(desktops) {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      margin-block-end: abs.$spacing-64;
+    }
+  }
+  &__title {
+    font-family: b.$font-heading;
+
+    margin: 0;
+
+    font-weight: 300;
+    text-transform: uppercase;
+
+    justify-self: center;
+
+    font-size: b.$font-size-30;
+
+    @include abs.breakpoint(desktops) {
+      font-size: b.$font-size-52;
+    }
+  }
+  &__grid {
+    gap: abs.$spacing-24;
+
+    @include abs.breakpoint(tablets) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include abs.breakpoint(desktops) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+  }
+
+  // &__item:nth-child(even) {
+  //   .card__img {
+  //     justify-self: end;
+  //   }
+  // }
+
+  &__cta {
+    @extend %cta-btn;
+    @include abs.breakpoint(desktops) {
+      display: inline-block;
+    }
+  }
+
+  &__cta:hover {
+    color: abs.$white;
+    background: abs.$black;
+  }
+
+  &__cta--secondary {
+    display: inline-block;
+    justify-self: center;
+
+    margin-block-start: abs.$spacing-32;
+
+    @include abs.breakpoint(desktops) {
+      display: none;
+    }
+  }
+}

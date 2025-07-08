@@ -1,0 +1,20 @@
+@use "variables" as v;
+
+%btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+%cta-btn {
+  @extend %btn;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: v.$black;
+
+  border: 1px solid v.$black;
+  padding: v.$spacing-8 v.$spacing-48;
+}

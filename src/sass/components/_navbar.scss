@@ -1,0 +1,64 @@
+@use "../abstracts" as abs;
+@use "../base/" as b;
+
+.nav {
+  // max-width: 330px;
+
+  margin-block-start: 0;
+
+  // header nav
+  &--primary {
+    @include abs.breakpoint(desktops) {
+      display: flex;
+    }
+  }
+  &__list {
+    display: flex;
+
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    gap: abs.$spacing-32;
+
+    align-items: center;
+  }
+  &__item {
+  }
+  &__link {
+    position: relative;
+
+    text-decoration: none;
+    color: white;
+
+    font-size: b.$font-size-18;
+    font-family: b.$font-body;
+    font-weight: 300;
+
+    display: inline-block;
+
+    @include abs.breakpoint(desktops) {
+      &::after {
+        content: "";
+        position: absolute;
+
+        left: 50%; // center starting point
+        bottom: -7px;
+        transform: translateX(-50%);
+        // shift it to be perfectly centered
+
+        height: 3px;
+        width: 0%;
+
+        background-color: currentColor;
+        // transform: scaleX(0);
+        transform-origin: left;
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 50%;
+      }
+    }
+  }
+}

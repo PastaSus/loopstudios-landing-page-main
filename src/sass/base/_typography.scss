@@ -1,0 +1,39 @@
+/* Typography Scale */
+$font-size-4: 0.25rem; // 4px
+$font-size-8: 0.5rem; // 8px
+$font-size-10: 0.625rem; // 10px
+$font-size-12: 0.75rem; // 12px
+$font-size-14: 0.875rem; // 14px
+$font-size-16: 1rem; // 16px
+$font-size-18: 1.125rem; // 18px
+$font-size-20: 1.25rem; // 20px
+$font-size-24: 1.5rem; // 24px
+$font-size-30: 1.875rem; // 30px
+$font-size-36: 2.25rem; // 36px
+$font-size-40: 2.5rem; //40px
+$font-size-44: 2.75rem; // 44px
+$font-size-52: 3.25rem; // 52px
+$font-size-62: 3.875rem; // 62px
+$font-size-74: 4.625rem; // 74px
+$font-size-86: 5.375rem; // 86px
+$font-size-98: 6.125rem; // 98px
+
+/* Clamp Font Sizes */
+$clamp-font-20: clamp(1.25rem, 2vw, 1.5rem); // 20px → 24px
+$clamp-font-24: clamp(1.5rem, 2.5vw, 1.875rem); // 24px → 30px
+$clamp-font-30: clamp(1.875rem, 3vw, 2.25rem); // 30px → 36px
+$clamp-font-36: clamp(2.25rem, 3.5vw, 2.75rem); // 36px → 44px
+$clamp-font-44: clamp(2.75rem, 4vw, 3.25rem); // 44px → 52px
+$clamp-font-52: clamp(3.25rem, 5vw, 3.875rem); // 52px → 62px
+$clamp-font-62: clamp(3.875rem, 6vw, 4.625rem); // 62px → 74px
+$clamp-font-74: clamp(4.625rem, 7vw, 5.375rem); // 74px → 86px
+$clamp-font-86: clamp(5.375rem, 8vw, 6.125rem); // 86px → 98px
+$clamp-font-98: clamp(6.125rem, 9vw, 7rem); // 98px → 112px
+
+/* Clamp Variations */
+$clamp-font-24-v2: clamp(1.5rem, 2.5vw, 2.75rem); // 24px → 44px
+$clamp-font-24-v3: clamp(1.5rem, 3vw, 3rem); // 24px → 48px
+
+// font family
+$font-body: "Alata", sans-serif;
+$font-heading: "Josefin Sans", sans-serif;
