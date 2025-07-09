@@ -7,7 +7,7 @@
   "scripts": {
     "build:sass": "sass src/sass:public/dist",
     "copy:html": "copyfiles -u 1 ./src/*.html public",
-    "copy:images": "copyfiles -u 2 src/images/**/* public/images",
+    "copy:images": "copyfiles -u 2 src/images/**/*.{jpg,png,svg} public/images",
     "copy": "npm-run-all --parallel copy:*",
     "watch:html": "onchange 'src/*.html' -- npm run copy:html",
     "watch:images": "onchange 'src/images/**/*' -- npm run copy:images",
