@@ -7,6 +7,7 @@
   "scripts": {
     "build:sass": "sass src/sass:public/dist",
     "copy:html": "copyfiles -u 1 ./src/*.html public",
+    "copy:js": "copyfiles -u 1 src/*.js public",
     "copy:images": "copyfiles -u 2 src/images/**/*.{jpg,png,svg} public/images",
     "copy": "npm-run-all --parallel copy:*",
     "watch:html": "onchange 'src/*.html' -- npm run copy:html",
@@ -15,7 +16,7 @@
     "watch": "npm-run-all --parallel watch:*",
     "serve": "browser-sync start --server public --files public",
     "start": "npm-run-all copy --parallel watch serve",
-    "build": "npm-run-all copy:html copy:images build:*",
+    "build": "npm-run-all copy:html copy:images copy:js build:*",
     "postbuild": "postcss public/dist/*.css -u autoprefixer cssnano -r --no-map"
   },
   "dependencies": {

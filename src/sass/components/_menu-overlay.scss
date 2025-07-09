@@ -2,9 +2,15 @@
 @use "../base/" as b;
 
 .menu-overlay {
-  position: absolute;
+  position: relative;
   z-index: 3;
-  margin: abs.$spacing-128 0 0 abs.$spacing-16;
+  margin: abs.$spacing-128 auto abs.$spacing-16;
+
+  max-width: 330px;
+
+  @include abs.breakpoint(tablets) {
+    max-width: 630px;
+  }
   &__list {
     list-style-type: none;
     padding: 0;
