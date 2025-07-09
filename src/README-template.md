@@ -73,19 +73,109 @@ Learned how to do sass/scss organize code better and be modular when it comes to
 To see how you can add code snippets, see below:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<header class="header">
+  <div class="header__inner container flex">
+    <!-- logo -->
+    <a href="#" class="header__logo" aria-label="Loopstudios home">
+      <img
+        src="images/logo.svg"
+        alt="Loopstudios logo"
+        class="header__logo-img"
+      />
+    </a>
+
+    <!-- mobile‑first menu toggle -->
+    <button
+      class="header__menu-btn btn"
+      type="button"
+      aria-controls="primary-navigation"
+      aria-expanded="false"
+    >
+      <span class="visually-hidden">Menu</span>
+      <!-- simple hamburger icon -->
+      <img src="images/icon-hamburger.svg" alt="" class="hamburger" />
+    </button>
+
+    <!-- primary navigation -->
+    <nav
+      id="primary-navigation"
+      class="nav hidden nav--primary"
+      aria-label="Primary"
+    >
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a class="nav__link" href="#about">About</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#careers">Careers</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#events">Events</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#products">Products</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#support">Support</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- full‑screen mobile overlay (aria‑modal dialog) -->
+  <div
+    class="menu-overlay hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Menu Overlay"
+  >
+    <ul class="menu-overlay__list flex">
+      <li class="menu-overlay__item">
+        <a class="menu-overlay__link" href="#about">About</a>
+      </li>
+      <li class="menu-overlay__item">
+        <a class="menu-overlay__link" href="#careers">Careers</a>
+      </li>
+      <li class="menu-overlay__item">
+        <a class="menu-overlay__link" href="#events">Events</a>
+      </li>
+      <li class="menu-overlay__item">
+        <a class="menu-overlay__link" href="#products">Products</a>
+      </li>
+      <li class="menu-overlay__item">
+        <a class="menu-overlay__link" href="#support">Support</a>
+      </li>
+    </ul>
+  </div>
+</header>
 ```
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
+```scss
+@use "functions" as f;
+@use "sass:map";
+
+$breakpoints-up: (
+  "tablets": f.em(768),
+  "desktops": f.em(1440),
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map.get($breakpoints-up, $size)) {
+    @content;
+  }
 }
 ```
 
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+if (isMenuOpen) {
+  hamburger.src = "images/icon-hamburger.svg";
+  hiddenTxt.textContent = "Menu";
+  menuBtn.setAttribute("aria-expanded", "false");
+} else {
+  hamburger.src = "images/icon-close.svg";
+  hiddenTxt.textContent = "Close Menu";
+  menuBtn.setAttribute("aria-expanded", "true");
+}
 ```
 
 ### Continued development
