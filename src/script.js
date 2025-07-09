@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isMenuOpen) {
       hamburger.src = "images/icon-hamburger.svg";
-      hiddenTxt.textContent = "Menu";
+      hiddenTxt.textContent = "Open Menu";
       menuBtn.setAttribute("aria-expanded", "false");
     } else {
       hamburger.src = "images/icon-close.svg";
