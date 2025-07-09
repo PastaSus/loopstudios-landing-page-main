@@ -91,7 +91,9 @@ To see how you can add code snippets, see below:
       aria-controls="primary-navigation"
       aria-expanded="false"
     >
-      <span class="visually-hidden">Menu</span>
+      <span class="visually-hidden" aria-live="polite" aria-atomic="true"
+        >Menu</span
+      >
       <!-- simple hamburger icon -->
       <img src="images/icon-hamburger.svg" alt="" class="hamburger" />
     </button>
