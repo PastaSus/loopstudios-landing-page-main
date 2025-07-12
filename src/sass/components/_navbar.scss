@@ -38,27 +38,7 @@
     display: inline-block;
 
     @include abs.breakpoint(desktops) {
-      &::after {
-        content: "";
-        position: absolute;
-
-        left: 50%; // center starting point
-        bottom: -7px;
-        transform: translateX(-50%);
-        // shift it to be perfectly centered
-
-        height: 3px;
-        width: 0%;
-
-        background-color: currentColor;
-        // transform: scaleX(0);
-        transform-origin: left;
-        transition: width 0.3s ease;
-      }
-
-      &:hover::after {
-        width: 50%;
-      }
+      @include abs.underline-hover($hover-scale: 0.5);
     }
   }
 }

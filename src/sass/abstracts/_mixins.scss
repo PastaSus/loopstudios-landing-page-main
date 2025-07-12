@@ -1,12 +1,25 @@
-// @mixin gradient-overlay-before(
-//   $direction: to right,
-//   $start: rgba(0, 0, 0, 0.5),
-//   $end: transparent,
-//   $z: 1
-// ) {
-//   content: "";
-//   position: absolute;
-//   background: linear-gradient($direction, $start, $end);
-//   inset: 0;
-//   z-index: $z;
-// }
+@mixin underline-hover(
+  $color: currentColor,
+  $height: 3px,
+  $hover-scale: 1,
+  $transition: 0.3s ease
+) {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -7px;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    height: $height;
+    width: 100%;
+    background-color: $color;
+    transition: transform $transition;
+  }
+
+  &:hover::after {
+    transform: translateX(-50%) scaleX($hover-scale);
+  }
+}
