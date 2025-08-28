@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.querySelector(".header__menu-btn");
   const menuOverlay = document.querySelector(".menu-overlay");
   const overlay = document.querySelector(".overlay");
-  const nav = document.querySelector(".header__inner");
+  const header = document.querySelector(".header");
 
   let removeTrapFocus; //cleanup variable for trap
 
@@ -20,16 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
       hiddenTxt.textContent = "Open Menu";
       menuBtn.setAttribute("aria-expanded", "false");
 
-      removeTrapFocus = trapFocus(nav);
+      // cleanup trap
+      if (removeTrapFocus) removeTrapFocus();
+      removeTrapFocus = null;
     } else {
       hamburger.src = "images/icon-close.svg";
       hiddenTxt.textContent = "Close Menu";
       menuBtn.setAttribute("aria-expanded", "true");
 
-      if (removeTrapFocus) {
-        removeTrapFocus();
-        removeTrapFocus = null;
-      }
+      // activate trap on nav container
+      removeTrapFocus = trapFocus(header);
     }
 
     overlay.classList.toggle("hidden");
