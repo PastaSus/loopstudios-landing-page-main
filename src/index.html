@@ -16,7 +16,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
 
     <link rel="stylesheet" type="text/css" href="/dist/styles.css" />
@@ -46,7 +48,6 @@
           <span class="visually-hidden" aria-live="polite" aria-atomic="true"
             >Open Menu</span
           >
-          <!-- simple hamburger icon -->
           <img src="images/icon-hamburger.svg" alt="" class="hamburger" />
         </button>
 
