@@ -69,7 +69,8 @@
     }
   }
 
-  &__cta:hover {
+  &__cta:hover,
+  &__cta:focus {
     color: abs.$white;
     background: abs.$black;
   }

@@ -19,7 +19,8 @@
     transition: transform $transition;
   }
 
-  &:hover::after {
+  &:hover::after,
+  &:focus::after {
     transform: translateX(-50%) scaleX($hover-scale);
   }
 }

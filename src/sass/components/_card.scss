@@ -11,7 +11,8 @@
     overflow: hidden;
   }
 
-  &__figure:hover {
+  &__figure:hover,
+  &--creation:focus {
     @include abs.breakpoint(tablets) {
       .card__picture {
         opacity: 0.2;
