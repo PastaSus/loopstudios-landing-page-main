@@ -53,17 +53,15 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-
 - SCSS for organized, modular styling
-
 - JavaScript for interactivity
-
 - ARIA attributes for accessibility (aria-expanded, aria-controls)
-
 - Mobile-first workflow
-
 - Custom responsive navigation menu
-
+- NVDA(screen reader)
+- Lighthouse
+- Vercel
+- Axe dev tools
 - BEM naming convention for classes paired with scss
 
 ### What I learned
@@ -76,7 +74,7 @@ To see how you can add code snippets, see below:
 <header class="header">
   <div class="header__inner container flex">
     <!-- logo -->
-    <a href="#" class="header__logo" aria-label="Loopstudios home">
+    <a href="#" class="header__logo" aria-label="Go Back to Loopstudios Home">
       <img
         src="images/logo.svg"
         alt="Loopstudios logo"
@@ -92,13 +90,12 @@ To see how you can add code snippets, see below:
       aria-expanded="false"
     >
       <span class="visually-hidden" aria-live="polite" aria-atomic="true"
-        >Menu</span
+        >Open Menu</span
       >
-      <!-- simple hamburger icon -->
       <img src="images/icon-hamburger.svg" alt="" class="hamburger" />
     </button>
 
-    <!-- primary navigation -->
+    <!--desktop primary navigation -->
     <nav
       id="primary-navigation"
       class="nav hidden nav--primary"
@@ -129,7 +126,7 @@ To see how you can add code snippets, see below:
     class="menu-overlay hidden"
     role="dialog"
     aria-modal="true"
-    aria-label="Menu Overlay"
+    aria-label="Mobile primary navigation"
   >
     <ul class="menu-overlay__list flex">
       <li class="menu-overlay__item">
