@@ -47,6 +47,7 @@ Users should be able to:
 - Mobile-first workflow
 - Custom responsive navigation menu
 - tested with NVDA(screen reader)
+- tested with TalkBack(android screen reader)
 - Lighthouse
 - Vercel
 - Axe dev tools
