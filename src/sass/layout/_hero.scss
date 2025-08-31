@@ -2,9 +2,7 @@
 @use "../base/" as b;
 
 .hero {
-  // height: 80vh;
   max-width: clamp(330px, 80%, 1200px);
-  // margin-block-end: abs.$spacing-48;
 
   position: relative;
   @include abs.breakpoint(tablets) {
@@ -22,7 +20,6 @@
   }
 
   &__title-container {
-    // position: relative;
     max-width: clamp(330px, 80%, 1200px);
     min-height: 520px;
     align-items: center;
@@ -42,8 +39,6 @@
   }
 
   &__title {
-    // max-width: 330px;
-
     border: 2px solid abs.$white;
     color: abs.$white;
     text-transform: uppercase;
@@ -54,15 +49,6 @@
 
     padding-inline: abs.$spacing-24;
     padding-block: abs.$spacing-16;
-
-    // margin-block-start: abs.$spacing-128;
-    // top: 21%;
-    // top: clamp(8.5rem, 10vw, 10rem);
-    // left: clamp(0.5rem, 8vw, 6rem);
-
-    // position: absolute;
-
-    // justify-self: start;
 
     @include abs.breakpoint(tablets) {
       max-width: 630px;
